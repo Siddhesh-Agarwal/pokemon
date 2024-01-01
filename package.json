@@ -1,10 +1,10 @@
 {
-  "name": "pokemon-cards",
+  "name": "pokemon-mu",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
-  "displayName": "Pokemon Cards",
+  "displayName": "Pokemon Mu",
   "homepage": "https://pokemon-mu-pied.vercel.app/",
   "repository": {
     "type": "github",

@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 
 function TypeLabel(props: { type: string }) {
-    console.log(props.type)
-    return (
-      <span className={`px-3 py-1 mx-1 bg-${props.type.toLowerCase()} rounded-xl font-semibold shadow-sm uppercase`}>
-        {props.type}
-      </span>
-    )
-  }
+  console.log(props.type)
+  return (
+    <span className={`px-3 py-1 mx-1 bg-${props.type.toLowerCase()} rounded-xl font-semibold shadow-sm uppercase`}>
+      {props.type}
+    </span>
+  )
+}
 
 function AbilitiesLabel(props: { ability: string }) {
   return (
@@ -20,6 +20,7 @@ function AbilitiesLabel(props: { ability: string }) {
 }
 
 export default function Card({ Data }: { Data: pokemonData | undefined }) {
+  const URL = "https://pokemon-mu-pied.vercel.app/";
   return (
     <div className="flex flex-col items-center justify-center w-screen md:w-96 pb-4 bg-black bg-opacity-10 rounded-none md:rounded-xl shadow-none md:shadow-xl md:hover:shadow-2xl my-0">
       {/* Image */}
@@ -68,14 +69,16 @@ export default function Card({ Data }: { Data: pokemonData | undefined }) {
         <div className="flex flex-row items-center justify-center w-full h-1/2 mt-2">
           <div className="flex flex-col items-center justify-center w-full h-full">
             <h2 className="text-2xl font-bold">Share on Social Media</h2>
+            {/* Share name and image of the Pokemon on social media! */}
             <div className="flex flex-row items-center justify-center w-full h-full">
-              <a href={`https://twitter.com/intent/tweet?text=I%20just%20got%20a%20${Data?.name}%20on%20PokeNode%20TS!%20Check%20it%20out%20here:%20https://pokenode-ts.vercel.app`} target="_blank" rel="noopener noreferrer" className="p-2 mx-1 bg-blue-500 rounded-xl font-semibold shadow-sm uppercase text-white">
+              <a href={`https://twitter.com/intent/tweet?text=I%20just%20got%20a%20${Data?.name}%20on%20Pokemon%20Mu!%20Check%20it%20out%20here:&url=${URL}`}
+              target="_blank" rel="noopener noreferrer" className="p-2 mx-1 bg-blue-500 rounded-xl font-semibold shadow-sm uppercase text-white">
                 <FontAwesomeIcon icon={faTwitter} className="inline-flex mr-1" />
                 <p className="inline-flex">
                   Twitter
                 </p>
               </a>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=https://pokenode-ts.vercel.app`} target="_blank" rel="noopener noreferrer" className="p-2 mx-1 bg-blue-800 rounded-xl font-semibold shadow-sm uppercase text-white">
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${URL}`} target="_blank" rel="noopener noreferrer" className="p-2 mx-1 bg-blue-800 rounded-xl font-semibold shadow-sm uppercase text-white">
                 <FontAwesomeIcon icon={faFacebookF} className="inline-flex mr-1" />
                 <p className="inline-flex">
                   Facebook
