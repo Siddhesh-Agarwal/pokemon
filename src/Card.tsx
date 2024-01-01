@@ -1,17 +1,15 @@
 import pokemonData from "./types.ts"
-import {
-  FaFacebookF,
-  FaTwitter,
-} from "react-icons/fa6"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 
 function TypeLabel(props: { type: string }) {
-  console.log(props.type)
-  return (
-    <span className={`px-3 py-1 mx-1 bg-${props.type.toLowerCase()} rounded-xl font-semibold shadow-sm uppercase`}>
-      {props.type}
-    </span>
-  )
-}
+    console.log(props.type)
+    return (
+      <span className={`px-3 py-1 mx-1 bg-${props.type.toLowerCase()} rounded-xl font-semibold shadow-sm uppercase`}>
+        {props.type}
+      </span>
+    )
+  }
 
 function AbilitiesLabel(props: { ability: string }) {
   return (
@@ -72,13 +70,13 @@ export default function Card({ Data }: { Data: pokemonData | undefined }) {
             <h2 className="text-2xl font-bold">Share on Social Media</h2>
             <div className="flex flex-row items-center justify-center w-full h-full">
               <a href={`https://twitter.com/intent/tweet?text=I%20just%20got%20a%20${Data?.name}%20on%20PokeNode%20TS!%20Check%20it%20out%20here:%20https://pokenode-ts.vercel.app`} target="_blank" rel="noopener noreferrer" className="p-2 mx-1 bg-blue-500 rounded-xl font-semibold shadow-sm uppercase text-white">
-                <FaTwitter className="inline-flex mr-1" />
+                <FontAwesomeIcon icon={faTwitter} className="inline-flex mr-1" />
                 <p className="inline-flex">
                   Twitter
                 </p>
               </a>
               <a href={`https://www.facebook.com/sharer/sharer.php?u=https://pokenode-ts.vercel.app`} target="_blank" rel="noopener noreferrer" className="p-2 mx-1 bg-blue-800 rounded-xl font-semibold shadow-sm uppercase text-white">
-                <FaFacebookF className="inline-flex mr-1" />
+                <FontAwesomeIcon icon={faFacebookF} className="inline-flex mr-1" />
                 <p className="inline-flex">
                   Facebook
                 </p>
