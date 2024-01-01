@@ -1,8 +1,16 @@
 {
   "name": "pokemon-cards",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "license": "MIT",
+  "displayName": "Pokemon Cards",
+  "homepage": "https://pokemon-mu-pied.vercel.app/",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/Siddhesh-Agarwal/pokemon",
+    "directory": "/"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -15,6 +23,7 @@
     "pokenode-ts": "^1.20.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
     "react-spinners": "^0.13.8"
   },
   "devDependencies": {
