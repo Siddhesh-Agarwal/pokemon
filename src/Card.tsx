@@ -19,8 +19,11 @@ function AbilitiesLabel(props: { ability: string }) {
 
 export default function Card({ Data }: { Data: pokemonData | undefined }) {
   return (
-    <div className="flex flex-col items-center justify-center w-96 pb-4 bg-black bg-opacity-10 rounded-xl shadow-xl hover:shadow-2xl">
-      <img src={Data?.imageURL} alt={Data?.name} className="w-full border-b rounded-t-xl" />
+    <div className="flex flex-col items-center justify-center w-screen md:w-96 pb-4 bg-black bg-opacity-10 rounded-none md:rounded-xl shadow-xl hover:shadow-2xl">
+      {/* Image */}
+      <img src={Data?.imageURL} alt={Data?.name} className="w-full border-b rounded-t-xl" loading="lazy" />
+
+      {/* Name and Types */}
       <div className="flex flex-row items-center justify-center w-full h-1/2">
         <div className="flex flex-col items-center justify-center w-1/2 h-full">
           <h1 className="text-4xl font-bold mb-2 first-letter:capitalize">
@@ -31,26 +34,28 @@ export default function Card({ Data }: { Data: pokemonData | undefined }) {
           </div>
         </div>
       </div>
+
+      {/* Stats */}
       <div className="flex flex-col items-center justify-center w-full h-1/2 my-2">
         <div className="flex flex-row items-center justify-center w-full h-1/2">
           <div className="flex flex-col items-center justify-center w-1/3 h-full">
-            <h1 className="text-2xl text-center font-bold">Weight</h1>
-            <h1 className="text-2xl text-center font-semibold">{Data?.weight}</h1>
+            <h2 className="text-2xl text-center font-bold">Weight</h2>
+            <h3 className="text-xl text-center font-semibold">{Data?.weight}</h3>
           </div>
           <div className="flex flex-col items-center justify-center w-1/3 h-full">
-            <h1 className="text-2xl text-center font-bold">Height</h1>
-            <h1 className="text-2xl text-center font-semibold">{Data?.height}</h1>
+            <h2 className="text-2xl text-center font-bold">Height</h2>
+            <h3 className="text-xl text-center font-semibold">{Data?.height}</h3>
           </div>
           <div className="flex flex-col items-center justify-center w-1/3 h-full">
-            <h1 className="text-2xl text-center font-bold">Base XP</h1>
-            <h1 className="text-2xl text-center font-semibold">{Data?.base_experience}</h1>
+            <h2 className="text-2xl text-center font-bold">Base XP</h2>
+            <h3 className="text-xl text-center font-semibold">{Data?.base_experience}</h3>
           </div>
         </div>
 
         {/* Abilities  */}
         <div className="flex flex-row items-center justify-center w-full h-1/2">
           <div className="flex flex-col items-center justify-center w-full h-full">
-            <h1 className="text-2xl font-bold">Abilities</h1>
+            <h2 className="text-2xl font-bold">Abilities</h2>
             <div className="flex flex-row items-center justify-center w-full h-full">
               {Data?.abilities.map((ability, index) => <AbilitiesLabel ability={ability} key={index} />)}
             </div>

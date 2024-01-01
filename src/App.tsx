@@ -40,12 +40,10 @@ export default function App() {
 
   // Return the data
   return (
-    <main className={`w-screen h-screen overflow-hidden bg-${Data?.types[0].toLowerCase() || "normal"} bg-opacity-50`}>
-      <div className="flex flex-col items-center justify-center h-full">
-        {
-          Data ? <Card Data={Data} /> : <GridLoader color='#FFCB05' speedMultiplier={0.75} />
-        }
-      </div>
+    <main className={`w-screen h-screen p-0 m-0 overflow-hidden bg-${Data?.types[0].toLowerCase() || "normal"} bg-opacity-50 flex flex-col items-center justify-center`}>
+      {
+        Data ? <Card Data={Data} /> : <GridLoader color='#FFCB05' speedMultiplier={0.75} />
+      }
       <Analytics />
       <SpeedInsights />
     </main>
